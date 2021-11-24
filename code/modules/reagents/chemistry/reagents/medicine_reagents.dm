@@ -1537,6 +1537,12 @@
 	if(!M.blood_volume || !M.all_wounds)
 		return
 
+	for(var/i in bodyparts)
+		var/obj/item/bodypart/BP = i
+		if(!BP)
+			continue
+		BP.generic_bleedstacks -= 4
+
 	var/datum/wound/bloodiest_wound
 
 	for(var/i in M.all_wounds)
